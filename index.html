@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Комбо-филлы · дашборд</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg:#0a0d13; --panel:#10151f; --panel2:#161d2a; --muted:#8a93a6; --text:#e8ecf3;
+    --accent:#79e2a4; --accent2:#f7a365; --bad:#f26d6d; --warn:#f1c67a; --good:#79e2a4;
+    --border:#1c2434;
+  }
+  *{box-sizing:border-box}
+  html,body{background:var(--bg);color:var(--text);font-family:'Inter',ui-sans-serif,system-ui,-apple-system,sans-serif;margin:0;padding:0;font-size:14px;line-height:1.5}
+  code,pre,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  header{padding:22px 32px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px}
+  h1{font-size:18px;margin:0;font-weight:600;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:12px;margin-top:4px}
+  .actions{display:flex;gap:8px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:6px;background:var(--panel2);color:var(--text);border:1px solid var(--border);padding:8px 14px;border-radius:8px;text-decoration:none;font-size:13px;cursor:pointer;transition:background .15s}
+  .btn:hover{background:#1f2838;text-decoration:none}
+  .btn.primary{background:var(--accent);color:#0a0d13;border-color:var(--accent);font-weight:600}
+  .btn.primary:hover{background:#8ee9b2}
+
+  section{padding:22px 32px}
+  section + section{padding-top:0}
+  .section-title{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin:0 0 12px}
+
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+  .kpi{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
+  .kpi .label{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+  .kpi .val{font-size:22px;font-weight:600;margin-top:6px;letter-spacing:-.01em}
+  .kpi .hint{color:var(--muted);font-size:10px;margin-top:4px}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:16px}
+  .card h2{font-size:11px;margin:0 0 12px 0;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+  canvas{width:100%!important;height:240px!important}
+  .legend{display:flex;gap:14px;font-size:11px;color:var(--muted);margin-top:8px}
+  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;vertical-align:middle}
+
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:10px 12px;border-bottom:1px solid var(--border);text-align:right;white-space:nowrap}
+  th:first-child,td:first-child,th.l,td.l{text-align:left}
+  th{color:var(--muted);font-weight:500;font-size:10px;text-transform:uppercase;letter-spacing:.08em;position:sticky;top:0;background:var(--panel);z-index:1}
+  tbody tr{cursor:pointer;transition:background .1s}
+  tbody tr:hover{background:var(--panel2)}
+  tbody tr.open{background:var(--panel2)}
+  .pos{color:var(--good)} .neg{color:var(--bad)} .mut{color:var(--muted)}
+  .pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:10px;letter-spacing:.04em;background:#1c2434;color:var(--text)}
+  .pill.good{background:rgba(121,226,164,.15);color:var(--good)}
+  .pill.bad{background:rgba(242,109,109,.15);color:var(--bad)}
+
+  .leg-row{display:grid;grid-template-columns:1fr 90px 90px 90px 140px;gap:14px;padding:8px 0;border-bottom:1px dashed var(--border);font-size:12px;align-items:center}
+  .leg-row:last-child{border:none}
+  .leg-row .mut{font-size:11px}
+  .expand-row td{background:#080b10;padding:16px 28px}
+  .expand-row .block{margin-bottom:14px}
+  .expand-row .block-title{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+
+  .decomp{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+  .decomp .cell{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:10px 12px}
+  .decomp .cell .k{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+  .decomp .cell .v{font-size:15px;font-weight:600;margin-top:4px}
+
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .flex{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+
+  @media (max-width:900px){
+    .grid{grid-template-columns:1fr}
+    header,section{padding-left:16px;padding-right:16px}
+    .leg-row{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Комбо-филлы · маркет-мейкер</h1>
+    <div class="sub mono" id="meta">загрузка…</div>
+    <div class="sub">кошелёк <a href="https://preddy.trade/profile/0x7a0da16a1205ee51a56fa862e8baa61e350eff14" target="_blank" class="mono">0x7a0d…ff14</a> · мейкер по NO · снапшоты top-of-book до филла</div>
+  </div>
+  <div class="actions">
+    <a class="btn primary" href="sources.zip" download>⬇ Скачать все исходники (.zip)</a>
+    <a class="btn" href="fills.json" download>fills.json</a>
+    <a class="btn" href="act.json" download>act.json</a>
+    <a class="btn" href="r1.json" download>r1.json</a>
+  </div>
+</header>
+
+<section>
+  <div class="section-title">Сводка</div>
+  <div class="kpis" id="kpis"></div>
+</section>
+
+<section>
+  <div class="section-title">Графики</div>
+  <div class="grid">
+    <div class="card">
+      <h2>Премия к миду по каждому филлу (бп)</h2>
+      <canvas id="edgeChart"></canvas>
+      <div class="legend"><span><span class="dot" style="background:#79e2a4"></span>положительная (мы собрали премию)</span><span><span class="dot" style="background:#f26d6d"></span>отрицательная (переплатили)</span></div>
+    </div>
+    <div class="card">
+      <h2>Наша цена против честного диапазона NO</h2>
+      <canvas id="bandChart"></canvas>
+      <div class="legend"><span><span class="dot" style="background:#f1c67a"></span>диапазон (1−ask … 1−bid)</span><span><span class="dot" style="background:#79e2a4"></span>наш P</span></div>
+    </div>
+    <div class="card">
+      <h2>Накопленный P&amp;L против мида ($)</h2>
+      <canvas id="pnlChart"></canvas>
+    </div>
+    <div class="card">
+      <h2>«Устаревание» снапшотов (сек с последнего тика)</h2>
+      <canvas id="staleChart"></canvas>
+      <div class="legend"><span>лог. шкала · высокое значение = книга давно не двигалась</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">Филлы — клик по строке раскроет детали</div>
+  <div class="card" style="padding:0;overflow:hidden">
+    <div style="overflow:auto;max-height:70vh">
+      <table id="fillsTable">
+        <thead><tr>
+          <th class="l">#</th><th class="l">время</th><th class="l">комбо</th>
+          <th>ног</th><th>шт</th><th>оплачено</th><th>P (NO)</th>
+          <th>честный NO (bid–ask)</th><th>премия, бп</th><th>$ vs мид</th><th>устар., с</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">Словарь</div>
+  <div class="card" style="font-size:13px;line-height:1.7">
+    <div><b>Премия к миду</b> = <code class="mono">no_mid − P</code>, где <code class="mono">no_mid = 1 − fair_yes.mid</code>. Положительная — мы купили NO дешевле честной середины, то есть собрали премию с тейкера.</div>
+    <div><b>Наценка над 1−Πask</b> = <code class="mono">P − (1 − Πask)</code>. Насколько выше «безопасного» мейкерского пола мы ставим цену. Это то, что контролируем мы; остальное — ширина спреда по ногам.</div>
+    <div><b>Комбо-спред</b> = <code class="mono">Πask − Πbid</code>. Пирог, который делят мейкер и тейкер; примерно равен сумме спредов по ногам.</div>
+    <div><b>Устаревание</b> = время с последнего изменения top-of-book на ноге. Predexon отдаёт снапшот только при изменении, поэтому «устарело 1300с» = книга не двигалась 22 минуты, а не что мы долго не опрашивали.</div>
+  </div>
+</section>
+
+<script>
+const fmt = (x,d=2) => (x==null||isNaN(x))?'—':Number(x).toLocaleString('ru-RU',{minimumFractionDigits:d,maximumFractionDigits:d});
+const fmt$ = x => '$'+fmt(x,2);
+const bp = x => (x*10000);
+const colorBp = v => v>5?'pos':v<-5?'neg':'mut';
+const shortCombo = s => s.slice(0,10)+'…'+s.slice(-6);
+const tsHuman = ts => new Date(ts*1000).toISOString().replace('T',' ').slice(0,19)+'Z';
+
+fetch('fills.json').then(r=>r.json()).then(raw=>{
+  const data = raw.map(f=>{
+    const fy = f.fair_yes;
+    const no_lo = 1 - fy.ask, no_hi = 1 - fy.bid, no_mid = 1 - fy.mid;
+    const our = f.ours[0];
+    const P = our.price;
+    const edgeMid = no_mid - P;
+    const edgeLo  = no_lo  - P;
+    const markup  = P - no_lo;
+    const pnlMid  = edgeMid * our.shares;
+    const comboSpread = fy.ask - fy.bid;
+    const maxStale = Math.max(...f.legs.map(l => f.timestamp*1000 - l.last.ts))/1000;
+    return {...f, our, P, no_lo, no_hi, no_mid, edgeMid, edgeLo, markup, pnlMid, comboSpread, maxStale};
+  }).sort((a,b)=>a.timestamp-b.timestamp);
+
+  const n = data.length;
+  const totalPaid = data.reduce((s,f)=>s+f.our.paid_usdc,0);
+  const totalShares = data.reduce((s,f)=>s+f.our.shares,0);
+  const totalPnl = data.reduce((s,f)=>s+f.pnlMid,0);
+  const avgPremBp = data.reduce((s,f)=>s+bp(f.edgeMid),0)/n;
+  const wPremBp   = data.reduce((s,f)=>s+bp(f.edgeMid)*f.our.shares,0)/totalShares;
+  const dollarPremBp = (totalPnl/totalPaid)*10000;
+  const avgMarkupBp = data.reduce((s,f)=>s+bp(f.markup),0)/n;
+  const avgComboSpreadBp = data.reduce((s,f)=>s+bp(f.comboSpread),0)/n;
+  const positive = data.filter(f=>f.edgeMid>0).length;
+
+  const kpis = [
+    ['Филлов', n, ''],
+    ['Куплено шт (NO)', fmt(totalShares,0), ''],
+    ['Оплачено, $', fmt$(totalPaid), ''],
+    ['P&amp;L к миду, $', `<span class="${totalPnl>=0?'pos':'neg'}">${fmt$(totalPnl)}</span>`, ''],
+    ['Средняя премия к миду', `<span class="${colorBp(avgPremBp)}">${fmt(avgPremBp,1)} бп</span>`, 'простое среднее'],
+    ['Премия, взвеш. по шт.', `<span class="${colorBp(wPremBp)}">${fmt(wPremBp,1)} бп</span>`, 'по количеству'],
+    ['Доходность на капитал', `<span class="${colorBp(dollarPremBp)}">${fmt(dollarPremBp,1)} бп</span>`, 'P&amp;L / оплачено'],
+    ['Средняя наценка над 1−Πask', `<span class="${colorBp(avgMarkupBp)}">${fmt(avgMarkupBp,1)} бп</span>`, 'что контролируем мы'],
+    ['Средний комбо-спред', `<span class="mut">${fmt(avgComboSpreadBp,0)} бп</span>`, 'пирог к дележу'],
+    ['Положительных', `${positive}/${n}`, ''],
+  ];
+  document.getElementById('kpis').innerHTML = kpis.map(([l,v,h])=>`<div class="kpi"><div class="label">${l}</div><div class="val">${v}</div>${h?`<div class="hint">${h}</div>`:''}</div>`).join('');
+  document.getElementById('meta').textContent = `${tsHuman(data[0].timestamp)} → ${tsHuman(data[n-1].timestamp)}`;
+
+  const tb = document.querySelector('#fillsTable tbody');
+  data.forEach((f,i)=>{
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="l">${i+1}</td>
+      <td class="l mut mono" style="font-size:11px">${tsHuman(f.timestamp)}</td>
+      <td class="l"><span class="pill mono">${shortCombo(f.combo_condition_id)}</span></td>
+      <td>${f.legs.length}</td>
+      <td class="mono">${fmt(f.our.shares,2)}</td>
+      <td class="mono">${fmt$(f.our.paid_usdc)}</td>
+      <td class="mono">${fmt(f.P,4)}</td>
+      <td class="mut mono">${fmt(f.no_lo,4)} – ${fmt(f.no_hi,4)}</td>
+      <td class="${colorBp(bp(f.edgeMid))} mono">${fmt(bp(f.edgeMid),1)}</td>
+      <td class="${f.pnlMid>=0?'pos':'neg'} mono">${fmt$(f.pnlMid)}</td>
+      <td class="mut mono">${fmt(f.maxStale,0)}</td>
+    `;
+    const chartId = `book-${i}`;
+    const expand = document.createElement('tr');
+    expand.className = 'expand-row';
+    expand.style.display = 'none';
+    expand.innerHTML = `<td colspan="11">
+      <div class="block">
+        <div class="block-title">Разложение премии</div>
+        <div class="decomp">
+          <div class="cell"><div class="k">наш P (NO)</div><div class="v mono">${fmt(f.P,4)}</div></div>
+          <div class="cell"><div class="k">честный NO: пол / мид / потолок</div><div class="v mono" style="font-size:12px">${fmt(f.no_lo,4)} · ${fmt(f.no_mid,4)} · ${fmt(f.no_hi,4)}</div></div>
+          <div class="cell"><div class="k">комбо-спред</div><div class="v mono">${fmt(bp(f.comboSpread),0)} бп</div></div>
+          <div class="cell"><div class="k">наценка над 1−Πask</div><div class="v mono ${colorBp(bp(f.markup))}">${fmt(bp(f.markup),1)} бп</div></div>
+          <div class="cell"><div class="k">премия к миду</div><div class="v mono ${colorBp(bp(f.edgeMid))}">${fmt(bp(f.edgeMid),1)} бп</div></div>
+          <div class="cell"><div class="k">$ к миду</div><div class="v mono ${f.pnlMid>=0?'pos':'neg'}">${fmt$(f.pnlMid)}</div></div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="block-title">Транзакция и тейкер</div>
+        <div class="flex" style="font-size:12px">
+          <div><span class="mut">tx:</span> <a class="mono" href="https://polygonscan.com/tx/${f.tx}" target="_blank">${f.tx.slice(0,10)}…${f.tx.slice(-6)}</a></div>
+          <div><span class="mut">condition:</span> <span class="mono">${f.combo_condition_id.slice(0,14)}…</span></div>
+          <div><span class="mut">тейкер:</span> ${f.counterparties.filter(c=>c.role==='taker').map(c=>fmt$(c.paid_usdc)+' @ '+fmt(c.price,4)+' YES (<a class="mono" href="https://preddy.trade/profile/'+c.wallet+'" target="_blank">'+c.wallet.slice(0,8)+'…'+c.wallet.slice(-4)+'</a>)').join(', ')}</div>
+          ${f.counterparties.filter(c=>c.role==='maker').length?`<div><span class="mut">другие мейкеры:</span> ${f.counterparties.filter(c=>c.role==='maker').map(c=>'<a class="mono" href="https://preddy.trade/profile/'+c.wallet+'" target="_blank">'+c.wallet.slice(0,8)+'…'+c.wallet.slice(-4)+'</a>').join(', ')}</div>`:''}
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="block-title">Динамика стакана по ногам (top-of-book)</div>
+        <div style="background:#060910;border:1px solid var(--border);border-radius:8px;padding:12px">
+          <canvas id="${chartId}" style="height:260px!important"></canvas>
+          <div class="legend" style="margin-top:8px"><span>сплошная = bid · пунктир = ask · x = секунды до филла (0 — филл)</span></div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="block-title">Ноги (последний снапшот перед филлом)</div>
+        ${f.legs.map(l=>`
+          <div class="leg-row">
+            <div>
+              <div>${l.outcome} <span class="mut">· <span class="mono">${l.slug}</span></span></div>
+              <div class="mut">${l.question}</div>
+            </div>
+            <div class="mono">${l.snapshots} ${l.snapshots===1?'снап':'снап.'}</div>
+            <div class="mono">bid ${fmt(l.last.bid,3)}</div>
+            <div class="mono">ask ${fmt(l.last.ask,3)}</div>
+            <div class="mut mono">${fmt((f.timestamp*1000 - l.last.ts)/1000,0)}с с последнего тика</div>
+          </div>
+        `).join('')}
+      </div>
+    </td>`;
+    tr.addEventListener('click',()=>{
+      const open = expand.style.display !== 'none';
+      expand.style.display = open ? 'none' : 'table-row';
+      tr.classList.toggle('open', !open);
+      if (!open && !expand.dataset.rendered) {
+        renderBookChart(chartId, f);
+        expand.dataset.rendered = '1';
+      }
+    });
+    tb.appendChild(tr); tb.appendChild(expand);
+  });
+
+  // Charts
+  const labels = data.map((_,i)=>'#'+(i+1));
+  const commonOpts = {
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{labels:{color:'#8a93a6',font:{size:10}}}},
+    scales:{
+      x:{ticks:{color:'#8a93a6',font:{size:10}},grid:{color:'#1c2434'}},
+      y:{ticks:{color:'#8a93a6',font:{size:10}},grid:{color:'#1c2434'}}
+    }
+  };
+
+  new Chart(document.getElementById('edgeChart'),{
+    type:'bar',
+    data:{labels,datasets:[{
+      label:'премия к миду (бп)',
+      data:data.map(f=>bp(f.edgeMid)),
+      backgroundColor:data.map(f=>f.edgeMid>=0?'#79e2a4':'#f26d6d'),
+      borderRadius:3
+    }]},
+    options:commonOpts
+  });
+
+  new Chart(document.getElementById('bandChart'),{
+    type:'line',
+    data:{labels,datasets:[
+      {label:'1 − ask (пол NO)',data:data.map(f=>f.no_lo),borderColor:'#f1c67a',backgroundColor:'rgba(241,198,122,.15)',fill:'+1',pointRadius:0,tension:.25},
+      {label:'1 − bid (потолок NO)',data:data.map(f=>f.no_hi),borderColor:'#f1c67a',backgroundColor:'rgba(241,198,122,.15)',fill:false,pointRadius:0,tension:.25},
+      {label:'наш P',data:data.map(f=>f.P),borderColor:'#79e2a4',backgroundColor:'#79e2a4',pointRadius:3,tension:0,fill:false}
+    ]},
+    options:commonOpts
+  });
+
+  let cum=0;
+  new Chart(document.getElementById('pnlChart'),{
+    type:'line',
+    data:{labels,datasets:[{
+      label:'накопленный $ vs мид',
+      data:data.map(f=>cum+=f.pnlMid),
+      borderColor:'#79e2a4',backgroundColor:'rgba(121,226,164,.15)',fill:true,pointRadius:2,tension:.2
+    }]},
+    options:commonOpts
+  });
+
+  new Chart(document.getElementById('staleChart'),{
+    type:'bar',
+    data:{labels,datasets:[{label:'сек. с последнего тика',data:data.map(f=>f.maxStale),backgroundColor:'#f7a365',borderRadius:3}]},
+    options:{...commonOpts,scales:{...commonOpts.scales,y:{...commonOpts.scales.y,type:'logarithmic'}}}
+  });
+
+  const palette = ['#79e2a4','#f7a365','#f1c67a','#8ab4ff','#f26d6d','#c689f7','#6de3d1','#e26de3'];
+  function renderBookChart(id, f){
+    const t_fill = f.timestamp*1000;
+    const datasets = [];
+    f.legs.forEach((l, idx)=>{
+      const c = palette[idx % palette.length];
+      const pts = l.series.map(s=>({x:(s.ts - t_fill)/1000, bid:s.bid, ask:s.ask}));
+      const bidData=[], askData=[];
+      pts.forEach((p,j)=>{
+        const nextX = j+1<pts.length ? pts[j+1].x : 0;
+        bidData.push({x:p.x,y:p.bid}); bidData.push({x:nextX,y:p.bid});
+        askData.push({x:p.x,y:p.ask}); askData.push({x:nextX,y:p.ask});
+      });
+      const legLabel = `${l.outcome.length>18?l.outcome.slice(0,16)+'…':l.outcome}`;
+      datasets.push({label:`${legLabel} bid`, data:bidData, borderColor:c, backgroundColor:c, borderWidth:1.5, pointRadius:0, tension:0});
+      datasets.push({label:`${legLabel} ask`, data:askData, borderColor:c, backgroundColor:c, borderWidth:1.5, pointRadius:0, tension:0, borderDash:[4,3]});
+    });
+    new Chart(document.getElementById(id),{
+      type:'line',
+      data:{datasets},
+      options:{
+        responsive:true,maintainAspectRatio:false,parsing:false,
+        plugins:{
+          legend:{labels:{color:'#8a93a6',font:{size:10},boxWidth:10}},
+          tooltip:{callbacks:{title:items=>fmt(items[0].parsed.x,1)+'с до филла'}}
+        },
+        scales:{
+          x:{type:'linear',title:{display:true,text:'секунд до филла (0 = филл)',color:'#8a93a6',font:{size:10}},ticks:{color:'#8a93a6',font:{size:10}},grid:{color:'#1c2434'}},
+          y:{title:{display:true,text:'цена',color:'#8a93a6',font:{size:10}},ticks:{color:'#8a93a6',font:{size:10}},grid:{color:'#1c2434'}}
+        }
+      }
+    });
+  }
+}).catch(e=>{
+  document.body.innerHTML='<pre style="padding:20px;color:#f26d6d">Не удалось загрузить fills.json: '+e+'</pre>';
+});
+</script>
+</body>
+</html>

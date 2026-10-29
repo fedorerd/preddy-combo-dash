@@ -1,0 +1,1457 @@
+[
+ {
+  "timestamp": 1793269085,
+  "tx": "0xf3a476934ce797b78e9e42d6acd39e61ef6253475c36d07d00494f37b3f8ca72",
+  "combo_condition_id": "0x033d3342849265527883d4d2fe561f09130000000000000000000000000000",
+  "size_shares": 165.458667,
+  "ours": [
+   {
+    "wallet": "0x7a0da16a1205ee51a56fa862e8baa61e350eff14",
+    "role": "maker",
+    "matched_against": "0x326f9cbcc759620d7cc209fce907b627a63b1a19",
+    "outcome": "NO",
+    "paid_usdc": 141.483707,
+    "shares": 165.458667,
+    "fee_usdc": 0.0,
+    "price": 0.8551000051269602
+   }
+  ],
+  "counterparties": [
+   {
+    "wallet": "0x326f9cbcc759620d7cc209fce907b627a63b1a19",
+    "role": "taker",
+    "matched_against": null,
+    "outcome": "YES",
+    "paid_usdc": 23.97496,
+    "shares": 165.458667,
+    "fee_usdc": 1.02504,
+    "price": 0.1448999948730398
+   }
+  ],
+  "legs": [
+   {
+    "slug": "epl-bou-lee-2026-10-31-bou",
+    "question": "Will AFC Bournemouth win on 2026-10-31?",
+    "outcome": "Yes",
+    "token_id": "30038821122590202635948940876832658083483908356187918279658662555898477756932",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793268425761,
+     "bid": 0.45,
+     "ask": 0.46
+    },
+    "last": {
+     "ts": 1793268425761,
+     "bid": 0.45,
+     "ask": 0.46
+    },
+    "series": [
+     {
+      "ts": 1793268425761,
+      "bid": 0.45,
+      "ask": 0.46
+     }
+    ]
+   },
+   {
+    "slug": "epl-ast-ful-2026-10-31-ast",
+    "question": "Will Aston Villa FC win on 2026-10-31?",
+    "outcome": "Yes",
+    "token_id": "63836700781975532256871758046818265135873894836552725310494198156221913058577",
+    "snapshots": 2,
+    "first": {
+     "ts": 1793268978146,
+     "bid": 0.49,
+     "ask": 0.5
+    },
+    "last": {
+     "ts": 1793269079788,
+     "bid": 0.49,
+     "ask": 0.5
+    },
+    "series": [
+     {
+      "ts": 1793268978146,
+      "bid": 0.49,
+      "ask": 0.5
+     },
+     {
+      "ts": 1793269079788,
+      "bid": 0.49,
+      "ask": 0.5
+     }
+    ]
+   },
+   {
+    "slug": "epl-tot-cry-2026-10-31-tot",
+    "question": "Will Tottenham Hotspur FC win on 2026-10-31?",
+    "outcome": "Yes",
+    "token_id": "86485533606162469866365105310499422626774688947215885542387344625537007460579",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793267131757,
+     "bid": 0.62,
+     "ask": 0.63
+    },
+    "last": {
+     "ts": 1793267131757,
+     "bid": 0.62,
+     "ask": 0.63
+    },
+    "series": [
+     {
+      "ts": 1793267131757,
+      "bid": 0.62,
+      "ask": 0.63
+     }
+    ]
+   }
+  ],
+  "fair_yes": {
+   "bid": 0.13671,
+   "mid": 0.140765625,
+   "ask": 0.1449
+  }
+ },
+ {
+  "timestamp": 1793269025,
+  "tx": "0x6129b21a3a9941e6e195de245feaea3b60bb798c388846f4aaa6d5d71c39aa0c",
+  "combo_condition_id": "0x03efecc290d9c1b5b518c025d8e93a18580000000000000000000000000000",
+  "size_shares": 1617.75074,
+  "ours": [
+   {
+    "wallet": "0x7a0da16a1205ee51a56fa862e8baa61e350eff14",
+    "role": "maker",
+    "matched_against": "0xadefe3834ea1cad5123a25a65fe7df67c5a98fff",
+    "outcome": "NO",
+    "paid_usdc": 1139.38023,
+    "shares": 1617.75074,
+    "fee_usdc": 0.0,
+    "price": 0.7042990009697044
+   }
+  ],
+  "counterparties": [
+   {
+    "wallet": "0xadefe3834ea1cad5123a25a65fe7df67c5a98fff",
+    "role": "taker",
+    "matched_against": null,
+    "outcome": "YES",
+    "paid_usdc": 478.37051,
+    "shares": 1617.75074,
+    "fee_usdc": 21.62949,
+    "price": 0.2957009990302956
+   }
+  ],
+  "legs": [
+   {
+    "slug": "cs2-vit-navi-2026-10-29",
+    "question": "Counter-Strike: Vitality vs Natus Vincere (BO3) - PGL Masters Bucharest Playoffs",
+    "outcome": "Vitality",
+    "token_id": "51887153318162640211508555999864918561117369184938003207815890950893510335809",
+    "snapshots": 4,
+    "first": {
+     "ts": 1793269002306,
+     "bid": 0.71,
+     "ask": 0.72
+    },
+    "last": {
+     "ts": 1793269022893,
+     "bid": 0.71,
+     "ask": 0.72
+    },
+    "series": [
+     {
+      "ts": 1793269002306,
+      "bid": 0.71,
+      "ask": 0.72
+     },
+     {
+      "ts": 1793269015463,
+      "bid": 0.71,
+      "ask": 0.72
+     },
+     {
+      "ts": 1793269018661,
+      "bid": 0.71,
+      "ask": 0.72
+     },
+     {
+      "ts": 1793269022893,
+      "bid": 0.71,
+      "ask": 0.72
+     }
+    ]
+   },
+   {
+    "slug": "cs2-bb3-furia-2026-10-29-map-handicap-home-1pt5",
+    "question": "Map Handicap: FURIA (-1.5) vs BetBoom Team (+1.5)",
+    "outcome": "BetBoom Team",
+    "token_id": "91905343320226066803843457690769647235574462209964703747424812100772227460181",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793268930142,
+     "bid": 0.64,
+     "ask": 0.65
+    },
+    "last": {
+     "ts": 1793268930142,
+     "bid": 0.64,
+     "ask": 0.65
+    },
+    "series": [
+     {
+      "ts": 1793268930142,
+      "bid": 0.64,
+      "ask": 0.65
+     }
+    ]
+   },
+   {
+    "slug": "cs2-aur1-mouz-2026-10-29",
+    "question": "Counter-Strike: Aurora Gaming vs MOUZ (BO3) - PGL Masters Bucharest Playoffs",
+    "outcome": "MOUZ",
+    "token_id": "89289279717434476411317650311595099155832726516993470469662730377021980763528",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793268993728,
+     "bid": 0.62,
+     "ask": 0.63
+    },
+    "last": {
+     "ts": 1793268993728,
+     "bid": 0.62,
+     "ask": 0.63
+    },
+    "series": [
+     {
+      "ts": 1793268993728,
+      "bid": 0.62,
+      "ask": 0.63
+     }
+    ]
+   }
+  ],
+  "fair_yes": {
+   "bid": 0.281728,
+   "mid": 0.288234375,
+   "ask": 0.29484
+  }
+ },
+ {
+  "timestamp": 1793268938,
+  "tx": "0xcf0451adab9991525c961ae7a2b02e5c6b984283fd810776746228126d15c0ba",
+  "combo_condition_id": "0x031cdf84c4280cfba7f0584b6054830b680000000000000000000000000000",
+  "size_shares": 67.39,
+  "ours": [
+   {
+    "wallet": "0x7a0da16a1205ee51a56fa862e8baa61e350eff14",
+    "role": "maker",
+    "matched_against": "0xdefde6f36b380260f86472e2df82e4ab1073afbc",
+    "outcome": "NO",
+    "paid_usdc": 55.494452,
+    "shares": 67.39,
+    "fee_usdc": 0.0,
+    "price": 0.82348200029678
+   }
+  ],
+  "counterparties": [
+   {
+    "wallet": "0x4f288a89cab0aa1673eacc96be43868a887ae9f3",
+    "role": "maker",
+    "matched_against": "0xdefde6f36b380260f86472e2df82e4ab1073afbc",
+    "outcome": "NO",
+    "paid_usdc": 1.809703,
+    "shares": 2.198375,
+    "fee_usdc": 0.0,
+    "price": 0.8232003184170126
+   },
+   {
+    "wallet": "0xdefde6f36b380260f86472e2df82e4ab1073afbc",
+    "role": "taker",
+    "matched_against": null,
+    "outcome": "YES",
+    "paid_usdc": 12.28422,
+    "shares": 69.588375,
+    "fee_usdc": 0.50578,
+    "price": 0.1765268983504788
+   }
+  ],
+  "legs": [
+   {
+    "slug": "cs2-bb3-furia-2026-10-29-map-handicap-home-1pt5",
+    "question": "Map Handicap: FURIA (-1.5) vs BetBoom Team (+1.5)",
+    "outcome": "BetBoom Team",
+    "token_id": "91905343320226066803843457690769647235574462209964703747424812100772227460181",
+    "snapshots": 2,
+    "first": {
+     "ts": 1793268607709,
+     "bid": 0.64,
+     "ask": 0.65
+    },
+    "last": {
+     "ts": 1793268930142,
+     "bid": 0.64,
+     "ask": 0.65
+    },
+    "series": [
+     {
+      "ts": 1793268607709,
+      "bid": 0.64,
+      "ask": 0.65
+     },
+     {
+      "ts": 1793268930142,
+      "bid": 0.64,
+      "ask": 0.65
+     }
+    ]
+   },
+   {
+    "slug": "cs2-vit-navi-2026-10-29-map-handicap-away-1pt5",
+    "question": "Map Handicap: VIT (-1.5) vs Natus Vincere (+1.5)",
+    "outcome": "Vitality",
+    "token_id": "108882475035273224261166477080329266326119908578798701190061204854362744801119",
+    "snapshots": 2,
+    "first": {
+     "ts": 1793268924851,
+     "bid": 0.41,
+     "ask": 0.43
+    },
+    "last": {
+     "ts": 1793268929964,
+     "bid": 0.41,
+     "ask": 0.43
+    },
+    "series": [
+     {
+      "ts": 1793268924851,
+      "bid": 0.41,
+      "ask": 0.43
+     },
+     {
+      "ts": 1793268929964,
+      "bid": 0.41,
+      "ask": 0.43
+     }
+    ]
+   },
+   {
+    "slug": "cs2-aur1-mouz-2026-10-29",
+    "question": "Counter-Strike: Aurora Gaming vs MOUZ (BO3) - PGL Masters Bucharest Playoffs",
+    "outcome": "MOUZ",
+    "token_id": "89289279717434476411317650311595099155832726516993470469662730377021980763528",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793268797244,
+     "bid": 0.62,
+     "ask": 0.63
+    },
+    "last": {
+     "ts": 1793268797244,
+     "bid": 0.62,
+     "ask": 0.63
+    },
+    "series": [
+     {
+      "ts": 1793268797244,
+      "bid": 0.62,
+      "ask": 0.63
+     }
+    ]
+   }
+  ],
+  "fair_yes": {
+   "bid": 0.16268799999999997,
+   "mid": 0.16931249999999998,
+   "ask": 0.17608500000000002
+  }
+ },
+ {
+  "timestamp": 1793268928,
+  "tx": "0xfa1b907b54ca9367002bc3490cdecedd72f466b49625dbca13924f110cf6ee93",
+  "combo_condition_id": "0x0305691c38ceaed084480374b0ac2220a20000000000000000000000000000",
+  "size_shares": 1003.110563,
+  "ours": [
+   {
+    "wallet": "0x7a0da16a1205ee51a56fa862e8baa61e350eff14",
+    "role": "maker",
+    "matched_against": "0xdc16718af9f04590b38a8e8aa32dedcd034740a5",
+    "outcome": "NO",
+    "paid_usdc": 713.412233,
+    "shares": 1003.110563,
+    "fee_usdc": 0.0,
+    "price": 0.7112000005925568
+   }
+  ],
+  "counterparties": [
+   {
+    "wallet": "0xdc16718af9f04590b38a8e8aa32dedcd034740a5",
+    "role": "taker",
+    "matched_against": null,
+    "outcome": "YES",
+    "paid_usdc": 289.69833,
+    "shares": 1003.110563,
+    "fee_usdc": 10.30167,
+    "price": 0.28879999940744316
+   }
+  ],
+  "legs": [
+   {
+    "slug": "atp-norrie-medvede-2026-10-29-set-handicap-away-1pt5",
+    "question": "Set Handicap: Daniil Medvedev (-1.5) vs Cameron Norrie (+1.5)",
+    "outcome": "Daniil Medvedev",
+    "token_id": "57993286997923998963033397334452496665791098841936050243609184335802861925859",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793267586391,
+     "bid": 0.59,
+     "ask": 0.61
+    },
+    "last": {
+     "ts": 1793267586391,
+     "bid": 0.59,
+     "ask": 0.61
+    },
+    "series": [
+     {
+      "ts": 1793267586391,
+      "bid": 0.59,
+      "ask": 0.61
+     }
+    ]
+   },
+   {
+    "slug": "atp-vachero-jodar-2026-10-29-set-handicap-away-1pt5",
+    "question": "Set Handicap: Rafael Jodar (-1.5) vs Valentin Vacherot (+1.5)",
+    "outcome": "Rafael Jodar",
+    "token_id": "52052375838954380345739966224915255806492507836145632811347404123801881981531",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793267559093,
+     "bid": 0.48,
+     "ask": 0.49
+    },
+    "last": {
+     "ts": 1793267559093,
+     "bid": 0.48,
+     "ask": 0.49
+    },
+    "series": [
+     {
+      "ts": 1793267559093,
+      "bid": 0.48,
+      "ask": 0.49
+     }
+    ]
+   }
+  ],
+  "fair_yes": {
+   "bid": 0.28319999999999995,
+   "mid": 0.291,
+   "ask": 0.2989
+  }
+ },
+ {
+  "timestamp": 1793268916,
+  "tx": "0xc377a1a27ecdb539a75cb93597f57392bfa1290d391e3809c97ea9205395e41d",
+  "combo_condition_id": "0x03879edbb91eb07b9cea3eae52982787820000000000000000000000000000",
+  "size_shares": 117.88,
+  "ours": [
+   {
+    "wallet": "0x7a0da16a1205ee51a56fa862e8baa61e350eff14",
+    "role": "maker",
+    "matched_against": "0xefb7c200ca8f21ade87cd7b657035f1c00e73647",
+    "outcome": "NO",
+    "paid_usdc": 90.024956,
+    "shares": 117.88,
+    "fee_usdc": 0.0,
+    "price": 0.7637
+   }
+  ],
+  "counterparties": [
+   {
+    "wallet": "0x116f0e83be3ec57f60446fbc39fbde2c171a17af",
+    "role": "maker",
+    "matched_against": "0xefb7c200ca8f21ade87cd7b657035f1c00e73647",
+    "outcome": "NO",
+    "paid_usdc": 3.31423,
+    "shares": 4.355916,
+    "fee_usdc": 0.0,
+    "price": 0.7608571882469726
+   },
+   {
+    "wallet": "0xefb7c200ca8f21ade87cd7b657035f1c00e73647",
+    "role": "taker",
+    "matched_against": null,
+    "outcome": "YES",
+    "paid_usdc": 28.89673,
+    "shares": 122.235916,
+    "fee_usdc": 1.10327,
+    "price": 0.23640130450693395
+   }
+  ],
+  "legs": [
+   {
+    "slug": "cs2-bb3-furia-2026-10-29",
+    "question": "Counter-Strike: BetBoom Team vs FURIA (BO3) - PGL Masters Bucharest Playoffs",
+    "outcome": "FURIA",
+    "token_id": "89363738638564612318070746792293555176381906553270671964065804153832647471213",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793268806342,
+     "bid": 0.62,
+     "ask": 0.63
+    },
+    "last": {
+     "ts": 1793268806342,
+     "bid": 0.62,
+     "ask": 0.63
+    },
+    "series": [
+     {
+      "ts": 1793268806342,
+      "bid": 0.62,
+      "ask": 0.63
+     }
+    ]
+   },
+   {
+    "slug": "cs2-aur1-mouz-2026-10-29",
+    "question": "Counter-Strike: Aurora Gaming vs MOUZ (BO3) - PGL Masters Bucharest Playoffs",
+    "outcome": "Aurora Gaming",
+    "token_id": "60491718955324416506041197153408013195880560312839709702877811773524110615818",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793268797244,
+     "bid": 0.37,
+     "ask": 0.38
+    },
+    "last": {
+     "ts": 1793268797244,
+     "bid": 0.37,
+     "ask": 0.38
+    },
+    "series": [
+     {
+      "ts": 1793268797244,
+      "bid": 0.37,
+      "ask": 0.38
+     }
+    ]
+   }
+  ],
+  "fair_yes": {
+   "bid": 0.2294,
+   "mid": 0.234375,
+   "ask": 0.2394
+  }
+ },
+ {
+  "timestamp": 1793268742,
+  "tx": "0x77d1e76733f32879f7b7598f987f985dc73307bece7afa59a2430f92133b4642",
+  "combo_condition_id": "0x0312c0049740342fd1791581cab253465a0000000000000000000000000000",
+  "size_shares": 43.182217,
+  "ours": [
+   {
+    "wallet": "0x7a0da16a1205ee51a56fa862e8baa61e350eff14",
+    "role": "maker",
+    "matched_against": "0x9e3ed7b661a903fc97afcf49e0f014ebe869f882",
+    "outcome": "NO",
+    "paid_usdc": 24.663438,
+    "shares": 43.182217,
+    "fee_usdc": 0.0,
+    "price": 0.5711480260497047
+   }
+  ],
+  "counterparties": [
+   {
+    "wallet": "0x9e3ed7b661a903fc97afcf49e0f014ebe869f882",
+    "role": "taker",
+    "matched_against": null,
+    "outcome": "YES",
+    "paid_usdc": 18.518779,
+    "shares": 43.182217,
+    "fee_usdc": 0.52884,
+    "price": 0.42885197395029534
+   }
+  ],
+  "legs": [
+   {
+    "slug": "cs2-vit-navi-2026-10-29",
+    "question": "Counter-Strike: Vitality vs Natus Vincere (BO3) - PGL Masters Bucharest Playoffs",
+    "outcome": "Vitality",
+    "token_id": "51887153318162640211508555999864918561117369184938003207815890950893510335809",
+    "snapshots": 2,
+    "first": {
+     "ts": 1793268719664,
+     "bid": 0.71,
+     "ask": 0.72
+    },
+    "last": {
+     "ts": 1793268738502,
+     "bid": 0.71,
+     "ask": 0.72
+    },
+    "series": [
+     {
+      "ts": 1793268719664,
+      "bid": 0.71,
+      "ask": 0.72
+     },
+     {
+      "ts": 1793268738502,
+      "bid": 0.71,
+      "ask": 0.72
+     }
+    ]
+   },
+   {
+    "slug": "cs2-faze-gl1-2026-10-29",
+    "question": "Counter-Strike: FaZe vs GamerLegion (BO3) - Tesla Cup Playoffs",
+    "outcome": "FaZe",
+    "token_id": "102993426730033811693351500886670047604245974503601148693638336502214317623397",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793268708990,
+     "bid": 0.59,
+     "ask": 0.6
+    },
+    "last": {
+     "ts": 1793268708990,
+     "bid": 0.59,
+     "ask": 0.6
+    },
+    "series": [
+     {
+      "ts": 1793268708990,
+      "bid": 0.59,
+      "ask": 0.6
+     }
+    ]
+   }
+  ],
+  "fair_yes": {
+   "bid": 0.41889999999999994,
+   "mid": 0.42542499999999994,
+   "ask": 0.432
+  }
+ },
+ {
+  "timestamp": 1793268440,
+  "tx": "0x0f76a4e772cb50c11835746a4cc011195a3db3c5d4404e35ececd1cd9cf97c5c",
+  "combo_condition_id": "0x031b98bd7b348f2cbb7cc162de54aa6f5d0000000000000000000000000000",
+  "size_shares": 305.895509,
+  "ours": [
+   {
+    "wallet": "0x7a0da16a1205ee51a56fa862e8baa61e350eff14",
+    "role": "maker",
+    "matched_against": "0x9db04d3acb6ccf007f494b5f21363082553d0f6a",
+    "outcome": "NO",
+    "paid_usdc": 209.201939,
+    "shares": 305.895509,
+    "fee_usdc": 0.0,
+    "price": 0.6839000012909637
+   }
+  ],
+  "counterparties": [
+   {
+    "wallet": "0x9db04d3acb6ccf007f494b5f21363082553d0f6a",
+    "role": "taker",
+    "matched_against": null,
+    "outcome": "YES",
+    "paid_usdc": 96.69357,
+    "shares": 305.895509,
+    "fee_usdc": 3.30643,
+    "price": 0.31609999870903627
+   }
+  ],
+  "legs": [
+   {
+    "slug": "spl-nsr-kho-2026-10-29-team-total-home-2pt5",
+    "question": "Al Nassr Saudi Club vs. Al Kholood Saudi Club: Al Nassr Saudi Club O/U 2.5",
+    "outcome": "Over",
+    "token_id": "108623767658077427117526760399140870180599513418649325959394584280685652912098",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793268101276,
+     "bid": 0.5,
+     "ask": 0.52
+    },
+    "last": {
+     "ts": 1793268101276,
+     "bid": 0.5,
+     "ask": 0.52
+    },
+    "series": [
+     {
+      "ts": 1793268101276,
+      "bid": 0.5,
+      "ask": 0.52
+     }
+    ]
+   },
+   {
+    "slug": "sea-fio-ata-2026-10-29-total-2pt5",
+    "question": "ACF Fiorentina vs. Atalanta BC: O/U 2.5",
+    "outcome": "Over",
+    "token_id": "40227007855105062818827391983969396026190121864628199885343594540882480175590",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793268291290,
+     "bid": 0.61,
+     "ask": 0.62
+    },
+    "last": {
+     "ts": 1793268291290,
+     "bid": 0.61,
+     "ask": 0.62
+    },
+    "series": [
+     {
+      "ts": 1793268291290,
+      "bid": 0.61,
+      "ask": 0.62
+     }
+    ]
+   }
+  ],
+  "fair_yes": {
+   "bid": 0.305,
+   "mid": 0.31365,
+   "ask": 0.3224
+  }
+ },
+ {
+  "timestamp": 1793268383,
+  "tx": "0xaf93058eacccfc160361e5dd775fa09d545f545aa5afaa5739f1ac545ea6d223",
+  "combo_condition_id": "0x0347e25c4f739c17bd79c9785809c960550000000000000000000000000000",
+  "size_shares": 24.53,
+  "ours": [
+   {
+    "wallet": "0x7a0da16a1205ee51a56fa862e8baa61e350eff14",
+    "role": "maker",
+    "matched_against": "0x07e219251a41d173158da7e6576b657069006099",
+    "outcome": "NO",
+    "paid_usdc": 14.9633,
+    "shares": 24.53,
+    "fee_usdc": 0.0,
+    "price": 0.61
+   }
+  ],
+  "counterparties": [
+   {
+    "wallet": "0x53224176b413f20ac63d61f1a0e19002ffb38acb",
+    "role": "maker",
+    "matched_against": "0x07e219251a41d173158da7e6576b657069006099",
+    "outcome": "NO",
+    "paid_usdc": 0.213555,
+    "shares": 0.350895,
+    "fee_usdc": 0.0,
+    "price": 0.608600863506177
+   },
+   {
+    "wallet": "0x07e219251a41d173158da7e6576b657069006099",
+    "role": "taker",
+    "matched_against": null,
+    "outcome": "YES",
+    "paid_usdc": 9.70404,
+    "shares": 24.880895,
+    "fee_usdc": 0.29596,
+    "price": 0.39001973200722884
+   }
+  ],
+  "legs": [
+   {
+    "slug": "cs2-vit-navi-2026-10-29-map-handicap-away-1pt5",
+    "question": "Map Handicap: VIT (-1.5) vs Natus Vincere (+1.5)",
+    "outcome": "Natus Vincere",
+    "token_id": "41635752892995634682132147570086791584519807798376292972185633338308072694843",
+    "snapshots": 2,
+    "first": {
+     "ts": 1793268276445,
+     "bid": 0.57,
+     "ask": 0.58
+    },
+    "last": {
+     "ts": 1793268373258,
+     "bid": 0.57,
+     "ask": 0.58
+    },
+    "series": [
+     {
+      "ts": 1793268276445,
+      "bid": 0.57,
+      "ask": 0.58
+     },
+     {
+      "ts": 1793268373258,
+      "bid": 0.57,
+      "ask": 0.58
+     }
+    ]
+   },
+   {
+    "slug": "cs2-big5-ef1-2026-10-29-map-handicap-away-1pt5",
+    "question": "Map Handicap: BIG (-1.5) vs Eternal Fire (+1.5)",
+    "outcome": "Eternal Fire",
+    "token_id": "37769863742619255259447224258167069744873659822776803424539753601489805555606",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793267191957,
+     "bid": 0.66,
+     "ask": 0.68
+    },
+    "last": {
+     "ts": 1793267191957,
+     "bid": 0.66,
+     "ask": 0.68
+    },
+    "series": [
+     {
+      "ts": 1793267191957,
+      "bid": 0.66,
+      "ask": 0.68
+     }
+    ]
+   }
+  ],
+  "fair_yes": {
+   "bid": 0.3762,
+   "mid": 0.38525,
+   "ask": 0.39440000000000003
+  }
+ },
+ {
+  "timestamp": 1793268331,
+  "tx": "0x7536a2f5489d55831d5405a37c046bd00f7e59d003f3b5b276cb5e329ac192b0",
+  "combo_condition_id": "0x030ab2faa814a72330a96efc8ea4038dad0000000000000000000000000000",
+  "size_shares": 159.92,
+  "ours": [
+   {
+    "wallet": "0x7a0da16a1205ee51a56fa862e8baa61e350eff14",
+    "role": "maker",
+    "matched_against": "0xef460652c993d011442553faaa81b13a924cf872",
+    "outcome": "NO",
+    "paid_usdc": 99.997976,
+    "shares": 159.92,
+    "fee_usdc": 0.0,
+    "price": 0.6253
+   }
+  ],
+  "counterparties": [
+   {
+    "wallet": "0x960758a5a310ef934e762de19d281cf70bd85108",
+    "role": "maker",
+    "matched_against": "0xef460652c993d011442553faaa81b13a924cf872",
+    "outcome": "NO",
+    "paid_usdc": 33.22,
+    "shares": 55.0,
+    "fee_usdc": 0.0,
+    "price": 0.604
+   },
+   {
+    "wallet": "0xe88f0e123e908ac33734fc78c971a768ffbf6566",
+    "role": "maker",
+    "matched_against": "0xef460652c993d011442553faaa81b13a924cf872",
+    "outcome": "NO",
+    "paid_usdc": 22.307752,
+    "shares": 37.618468,
+    "fee_usdc": 0.0,
+    "price": 0.5930000126533596
+   },
+   {
+    "wallet": "0xef460652c993d011442553faaa81b13a924cf872",
+    "role": "taker",
+    "matched_against": null,
+    "outcome": "YES",
+    "paid_usdc": 97.01274,
+    "shares": 252.538468,
+    "fee_usdc": 2.98726,
+    "price": 0.38415034655235175
+   }
+  ],
+  "legs": [
+   {
+    "slug": "spl-nsr-kho-2026-10-29-team-total-home-1pt5",
+    "question": "Al Nassr Saudi Club vs. Al Kholood Saudi Club: Al Nassr Saudi Club O/U 1.5",
+    "outcome": "Over",
+    "token_id": "32360254321348066609110939417078288054686148930607182674586366544561751679378",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793267162578,
+     "bid": 0.75,
+     "ask": 0.8
+    },
+    "last": {
+     "ts": 1793267162578,
+     "bid": 0.75,
+     "ask": 0.8
+    },
+    "series": [
+     {
+      "ts": 1793267162578,
+      "bid": 0.75,
+      "ask": 0.8
+     }
+    ]
+   },
+   {
+    "slug": "uwcl-mci-psg-2026-10-29-team-total-away-0pt5",
+    "question": "Manchester City WFC vs. Paris Saint-Germain FC: Paris Saint-Germain FC O/U 0.5",
+    "outcome": "Over",
+    "token_id": "115380260679894414075794799200569751690345788910092316227129106705462178811765",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793267242116,
+     "bid": 0.58,
+     "ask": 0.61
+    },
+    "last": {
+     "ts": 1793267242116,
+     "bid": 0.58,
+     "ask": 0.61
+    },
+    "series": [
+     {
+      "ts": 1793267242116,
+      "bid": 0.58,
+      "ask": 0.61
+     }
+    ]
+   },
+   {
+    "slug": "uwcl-hbk-fcb-2026-10-29-halftime-result-away",
+    "question": "FC Barcelona leading at halftime?",
+    "outcome": "Yes",
+    "token_id": "53333171806978169950903355830355965071698017182256965856380503886994887009803",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793267237605,
+     "bid": 0.79,
+     "ask": 0.82
+    },
+    "last": {
+     "ts": 1793267237605,
+     "bid": 0.79,
+     "ask": 0.82
+    },
+    "series": [
+     {
+      "ts": 1793267237605,
+      "bid": 0.79,
+      "ask": 0.82
+     }
+    ]
+   },
+   {
+    "slug": "spl-nsr-kho-2026-10-29-nsr",
+    "question": "Will Al Nassr Saudi Club win on 2026-10-29?",
+    "outcome": "Yes",
+    "token_id": "98598890668109249123578263101458553902407167147751995302446052959088772845967",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793267189573,
+     "bid": 0.8,
+     "ask": 0.81
+    },
+    "last": {
+     "ts": 1793267189573,
+     "bid": 0.8,
+     "ask": 0.81
+    },
+    "series": [
+     {
+      "ts": 1793267189573,
+      "bid": 0.8,
+      "ask": 0.81
+     }
+    ]
+   }
+  ],
+  "fair_yes": {
+   "bid": 0.27492,
+   "mid": 0.298820528125,
+   "ask": 0.32412959999999996
+  }
+ },
+ {
+  "timestamp": 1793268263,
+  "tx": "0xeb208b715824f0936dc20ead85cf7a4200678f3233c4c84334e98d5b6c8e430a",
+  "combo_condition_id": "0x03dd560465404e83ec0a511f7a4a705b900000000000000000000000000000",
+  "size_shares": 442.275843,
+  "ours": [
+   {
+    "wallet": "0x7a0da16a1205ee51a56fa862e8baa61e350eff14",
+    "role": "maker",
+    "matched_against": "0xfdbf7de09b7253eb0ce1b51e03c612710962c88e",
+    "outcome": "NO",
+    "paid_usdc": 405.345811,
+    "shares": 442.275843,
+    "fee_usdc": 0.0,
+    "price": 0.9165000020134493
+   }
+  ],
+  "counterparties": [
+   {
+    "wallet": "0x924d4c817aa9ac412861e0bf9ad762c09fbbea43",
+    "role": "maker",
+    "matched_against": "0xfdbf7de09b7253eb0ce1b51e03c612710962c88e",
+    "outcome": "NO",
+    "paid_usdc": 4.0,
+    "shares": 4.361098,
+    "fee_usdc": 0.0,
+    "price": 0.9172002096719679
+   },
+   {
+    "wallet": "0xfdbf7de09b7253eb0ce1b51e03c612710962c88e",
+    "role": "taker",
+    "matched_against": null,
+    "outcome": "YES",
+    "paid_usdc": 37.29113,
+    "shares": 446.636941,
+    "fee_usdc": 1.70887,
+    "price": 0.083493160947473
+   }
+  ],
+  "legs": [
+   {
+    "slug": "wta-tagger-linette-2026-10-28",
+    "question": "Guangzhou Open: Lilli Tagger vs Magda Linette",
+    "outcome": "Lilli Tagger",
+    "token_id": "94371462888845145312567089715749264854793541167222060168379031458851798403980",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793267613742,
+     "bid": 0.72,
+     "ask": 0.73
+    },
+    "last": {
+     "ts": 1793267613742,
+     "bid": 0.72,
+     "ask": 0.73
+    },
+    "series": [
+     {
+      "ts": 1793267613742,
+      "bid": 0.72,
+      "ask": 0.73
+     }
+    ]
+   },
+   {
+    "slug": "wta-bondar-quevedo-2026-10-27",
+    "question": "Guangzhou Open: Anna Bondar vs Kaitlin Quevedo",
+    "outcome": "Anna Bondar",
+    "token_id": "90623023657827011786429308856329662672739303121084196029771240646862525195031",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793268219920,
+     "bid": 0.49,
+     "ask": 0.5
+    },
+    "last": {
+     "ts": 1793268219920,
+     "bid": 0.49,
+     "ask": 0.5
+    },
+    "series": [
+     {
+      "ts": 1793268219920,
+      "bid": 0.49,
+      "ask": 0.5
+     }
+    ]
+   },
+   {
+    "slug": "atp-zverev-grieksp-2026-10-29",
+    "question": "Erste Bank Open: Alexander Zverev vs Tallon Griekspoor",
+    "outcome": "Tallon Griekspoor",
+    "token_id": "25768890508409377156164493488653216986972423763194479607166950008130277924209",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793267934306,
+     "bid": 0.22,
+     "ask": 0.23
+    },
+    "last": {
+     "ts": 1793267934306,
+     "bid": 0.22,
+     "ask": 0.23
+    },
+    "series": [
+     {
+      "ts": 1793267934306,
+      "bid": 0.22,
+      "ask": 0.23
+     }
+    ]
+   }
+  ],
+  "fair_yes": {
+   "bid": 0.077616,
+   "mid": 0.080746875,
+   "ask": 0.08395
+  }
+ },
+ {
+  "timestamp": 1793268157,
+  "tx": "0x676fd704ff0727e5d6e5f5aa78ac3610a03f58b4fb4c5ba254ac9522fae4f7d9",
+  "combo_condition_id": "0x0399da886d494d496f7c38a81465adfe380000000000000000000000000000",
+  "size_shares": 11.796141,
+  "ours": [
+   {
+    "wallet": "0x7a0da16a1205ee51a56fa862e8baa61e350eff14",
+    "role": "maker",
+    "matched_against": "0x19662094d75d9b1b8aa8d1a11680f7c9870a056e",
+    "outcome": "NO",
+    "paid_usdc": 3.540022,
+    "shares": 11.796141,
+    "fee_usdc": 0.0,
+    "price": 0.3001000072820425
+   }
+  ],
+  "counterparties": [
+   {
+    "wallet": "0x19662094d75d9b1b8aa8d1a11680f7c9870a056e",
+    "role": "taker",
+    "matched_against": null,
+    "outcome": "YES",
+    "paid_usdc": 8.256119,
+    "shares": 11.796141,
+    "fee_usdc": 0.12388,
+    "price": 0.6998999927179576
+   }
+  ],
+  "legs": [
+   {
+    "slug": "lal-lev-mad-2026-10-31-total-0pt5",
+    "question": "Levante UD vs. Club Atl\u00e9tico de Madrid: O/U 0.5",
+    "outcome": "Over",
+    "token_id": "114526496741029635642041368447514567694036820499397375073851811043939021974784",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793267228953,
+     "bid": 0.95,
+     "ask": 0.964
+    },
+    "last": {
+     "ts": 1793267228953,
+     "bid": 0.95,
+     "ask": 0.964
+    },
+    "series": [
+     {
+      "ts": 1793267228953,
+      "bid": 0.95,
+      "ask": 0.964
+     }
+    ]
+   },
+   {
+    "slug": "spl-riy-qad-2026-10-29-total-0pt5",
+    "question": "Al Riyadh Saudi Club vs. Al Qadisiyah Saudi Club: O/U 0.5",
+    "outcome": "Over",
+    "token_id": "26058508344513217107494210648833635500553319941796160025274085390322184844307",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793267327944,
+     "bid": 0.959,
+     "ask": 0.975
+    },
+    "last": {
+     "ts": 1793267327944,
+     "bid": 0.959,
+     "ask": 0.975
+    },
+    "series": [
+     {
+      "ts": 1793267327944,
+      "bid": 0.959,
+      "ask": 0.975
+     }
+    ]
+   },
+   {
+    "slug": "lal-bar-ala-2026-10-31-total-1pt5",
+    "question": "FC Barcelona vs. Deportivo Alav\u00e9s: O/U 1.5",
+    "outcome": "Over",
+    "token_id": "34224052368914676522720123721180529430414905715002719827038334200676389001325",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793267361627,
+     "bid": 0.91,
+     "ask": 0.93
+    },
+    "last": {
+     "ts": 1793267361627,
+     "bid": 0.91,
+     "ask": 0.93
+    },
+    "series": [
+     {
+      "ts": 1793267361627,
+      "bid": 0.91,
+      "ask": 0.93
+     }
+    ]
+   },
+   {
+    "slug": "spl-nsr-kho-2026-10-29-nsr",
+    "question": "Will Al Nassr Saudi Club win on 2026-10-29?",
+    "outcome": "Yes",
+    "token_id": "98598890668109249123578263101458553902407167147751995302446052959088772845967",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793267189573,
+     "bid": 0.8,
+     "ask": 0.81
+    },
+    "last": {
+     "ts": 1793267189573,
+     "bid": 0.8,
+     "ask": 0.81
+    },
+    "series": [
+     {
+      "ts": 1793267189573,
+      "bid": 0.8,
+      "ask": 0.81
+     }
+    ]
+   }
+  ],
+  "fair_yes": {
+   "bid": 0.6632444,
+   "mid": 0.6853653114,
+   "ask": 0.70802667
+  }
+ },
+ {
+  "timestamp": 1793267999,
+  "tx": "0xc314bfc7da49812410f1aba5380ef816ecafc42d457a2cfe8168ab0cbb1cdc6a",
+  "combo_condition_id": "0x0361fe04493b757ea45a570dd7c23756cc0000000000000000000000000000",
+  "size_shares": 36.409609,
+  "ours": [
+   {
+    "wallet": "0x7a0da16a1205ee51a56fa862e8baa61e350eff14",
+    "role": "maker",
+    "matched_against": "0xda6feb60811c283372b6c57bc744e209e3f02ad7",
+    "outcome": "NO",
+    "paid_usdc": 31.617669,
+    "shares": 36.409609,
+    "fee_usdc": 0.0,
+    "price": 0.8683880400912847
+   }
+  ],
+  "counterparties": [
+   {
+    "wallet": "0xda6feb60811c283372b6c57bc744e209e3f02ad7",
+    "role": "taker",
+    "matched_against": null,
+    "outcome": "YES",
+    "paid_usdc": 4.79194,
+    "shares": 36.409609,
+    "fee_usdc": 0.20806,
+    "price": 0.1316119599087153
+   }
+  ],
+  "legs": [
+   {
+    "slug": "lol-kc-cfo-2026-10-29",
+    "question": "LoL: Karmine Corp vs CTBC Flying Oyster (BO3) - Worlds Group Stage",
+    "outcome": "Karmine Corp",
+    "token_id": "8649045562680816991177543311715660384104927029640858305404831862415985912126",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793267975703,
+     "bid": 0.81,
+     "ask": 0.82
+    },
+    "last": {
+     "ts": 1793267975703,
+     "bid": 0.81,
+     "ask": 0.82
+    },
+    "series": [
+     {
+      "ts": 1793267975703,
+      "bid": 0.81,
+      "ask": 0.82
+     }
+    ]
+   },
+   {
+    "slug": "lol-tes-blg-2026-10-28",
+    "question": "LoL: Top Esports vs Bilibili Gaming (BO3) - Worlds Group Stage",
+    "outcome": "Top Esports",
+    "token_id": "20418726026244459418892066085346350650248266661330089276254401620653630065990",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793267959750,
+     "bid": 0.24,
+     "ask": 0.25
+    },
+    "last": {
+     "ts": 1793267959750,
+     "bid": 0.24,
+     "ask": 0.25
+    },
+    "series": [
+     {
+      "ts": 1793267959750,
+      "bid": 0.24,
+      "ask": 0.25
+     }
+    ]
+   },
+   {
+    "slug": "lol-tl2-los-2026-10-30",
+    "question": "LoL: Team Liquid vs LOS (BO3) - Worlds Group Stage",
+    "outcome": "Team Liquid",
+    "token_id": "90168237441515412609267684221338972832872968639671742155594863847643990927438",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793267162299,
+     "bid": 0.79,
+     "ask": 0.8
+    },
+    "last": {
+     "ts": 1793267162299,
+     "bid": 0.79,
+     "ask": 0.8
+    },
+    "series": [
+     {
+      "ts": 1793267162299,
+      "bid": 0.79,
+      "ask": 0.8
+     }
+    ]
+   },
+   {
+    "slug": "lol-hle1-g2-2026-10-30",
+    "question": "LoL: Hanwha Life Esports vs G2 Esports (BO3) - Worlds Group Stage",
+    "outcome": "Hanwha Life Esports",
+    "token_id": "76374225609289491594580804427410229551983391807393959286982835765528912315097",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793267373654,
+     "bid": 0.79,
+     "ask": 0.8
+    },
+    "last": {
+     "ts": 1793267373654,
+     "bid": 0.79,
+     "ask": 0.8
+    },
+    "series": [
+     {
+      "ts": 1793267373654,
+      "bid": 0.79,
+      "ask": 0.8
+     }
+    ]
+   }
+  ],
+  "fair_yes": {
+   "bid": 0.12132504000000002,
+   "mid": 0.12619959187500002,
+   "ask": 0.1312
+  }
+ },
+ {
+  "timestamp": 1793267938,
+  "tx": "0xeea13bf9876c3580105cd3831b542facd10c5a3a023414c57721bf2269a94259",
+  "combo_condition_id": "0x03e709904f87cdb0c28a465164163b2bde0000000000000000000000000000",
+  "size_shares": 79.175403,
+  "ours": [
+   {
+    "wallet": "0x7a0da16a1205ee51a56fa862e8baa61e350eff14",
+    "role": "maker",
+    "matched_against": "0xadf8b87f05f7250b55a4fc843461c104c818f1ff",
+    "outcome": "NO",
+    "paid_usdc": 67.235753,
+    "shares": 79.175403,
+    "fee_usdc": 0.0,
+    "price": 0.849200009755555
+   }
+  ],
+  "counterparties": [
+   {
+    "wallet": "0xe88f0e123e908ac33734fc78c971a768ffbf6566",
+    "role": "maker",
+    "matched_against": "0xadf8b87f05f7250b55a4fc843461c104c818f1ff",
+    "outcome": "NO",
+    "paid_usdc": 8.51,
+    "shares": 10.0,
+    "fee_usdc": 0.0,
+    "price": 0.851
+   },
+   {
+    "wallet": "0xadf8b87f05f7250b55a4fc843461c104c818f1ff",
+    "role": "taker",
+    "matched_against": null,
+    "outcome": "YES",
+    "paid_usdc": 13.42965,
+    "shares": 89.175403,
+    "fee_usdc": 0.57035,
+    "price": 0.1505981419562522
+   }
+  ],
+  "legs": [
+   {
+    "slug": "acl2-tam-svr-2026-10-29-total-3pt5",
+    "question": "BG Tampines Rovers vs. PKR Svay Rieng: O/U 3.5",
+    "outcome": "Over",
+    "token_id": "6701013173436479193950829973625081187581587451518470000711844536870426444440",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793267758189,
+     "bid": 0.38,
+     "ask": 0.4
+    },
+    "last": {
+     "ts": 1793267758189,
+     "bid": 0.38,
+     "ask": 0.4
+    },
+    "series": [
+     {
+      "ts": 1793267758189,
+      "bid": 0.38,
+      "ask": 0.4
+     }
+    ]
+   },
+   {
+    "slug": "acl2-phn-ksc-2026-10-29-total-3pt5",
+    "question": "Phnom Penh Crown FC vs. Kitchee: O/U 3.5",
+    "outcome": "Over",
+    "token_id": "59983948817457693256944846617973302501355120897720151605788393616618533757377",
+    "snapshots": 1,
+    "first": {
+     "ts": 1793267237843,
+     "bid": 0.35,
+     "ask": 0.37
+    },
+    "last": {
+     "ts": 1793267237843,
+     "bid": 0.35,
+     "ask": 0.37
+    },
+    "series": [
+     {
+      "ts": 1793267237843,
+      "bid": 0.35,
+      "ask": 0.37
+     }
+    ]
+   }
+  ],
+  "fair_yes": {
+   "bid": 0.13299999999999998,
+   "mid": 0.1404,
+   "ask": 0.148
+  }
+ }
+]
